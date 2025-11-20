@@ -35,6 +35,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.keith.buybloo.R
+import com.keith.buybloo.ui.theme.blueto
 
 @Composable
 fun HomeScreen(){
@@ -62,7 +63,7 @@ fun HomeScreen(){
             text = "Choose your product",
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold,
-            color = Color.Blue,
+            color = blueto,
             fontFamily = FontFamily.SansSerif
 
         )
@@ -80,7 +81,7 @@ fun HomeScreen(){
             onClick = {},
             modifier = Modifier.height(50.dp).fillMaxWidth().padding(start = 20.dp, end = 20.dp),
             shape = RoundedCornerShape(10.dp),
-            colors = ButtonDefaults.buttonColors(Color.Blue)
+            colors = ButtonDefaults.buttonColors(blueto)
 
 
         ) {

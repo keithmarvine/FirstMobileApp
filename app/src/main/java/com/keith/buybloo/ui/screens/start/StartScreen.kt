@@ -32,6 +32,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.keith.buybloo.R
+import com.keith.buybloo.ui.theme.blueto
 
 @Composable
 fun StartScreen(){
@@ -70,7 +71,7 @@ fun StartScreen(){
 
             Image(
                 //to define the url of the image, we use painter
-                painter = painterResource(id = R.drawable.watch ),
+                painter = painterResource(id = R.drawable.watch3 ),
                 contentDescription = "Watch",
                 //To adjust the size and shape of the corners
                 modifier = Modifier.size(width = 200.dp, height = 300.dp).clip(shape = RoundedCornerShape(10.dp)),
@@ -83,7 +84,7 @@ fun StartScreen(){
 
             Image(
                 //to define the url of the image, we use painter
-                painter = painterResource(id = R.drawable.watch ),
+                painter = painterResource(id = R.drawable.watch4 ),
                 contentDescription = "Watch",
                 //To adjust the size and shape of the corners
                 modifier = Modifier.size(width = 200.dp, height = 300.dp).clip(shape = RoundedCornerShape(10.dp)),
@@ -114,7 +115,7 @@ fun StartScreen(){
             text = "SHOP.DISCOVER.TREND",
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold,
-            color = Color.Blue,
+            color = blueto,
             fontFamily = FontFamily.SansSerif,
             modifier = Modifier.align(alignment = Alignment.CenterHorizontally)
 
@@ -131,7 +132,7 @@ fun StartScreen(){
         Button( onClick = {},
             modifier = Modifier.height(50.dp).fillMaxWidth().padding(start = 20.dp, end = 20.dp),
             shape = RoundedCornerShape(10.dp),
-            colors = ButtonDefaults.buttonColors(Color.Blue)) {
+            colors = ButtonDefaults.buttonColors(blueto)) {
 
             Text(text = "Let's Get started!",
                 fontSize = 20.sp
