@@ -9,13 +9,17 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.ShoppingCart
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -34,8 +38,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.keith.buybloo.R
 import com.keith.buybloo.ui.theme.blueto
 
@@ -125,6 +131,38 @@ fun CategoryScreen(){
                     modifier = Modifier.size(200.dp).padding(start = 10.dp),
                     contentScale = ContentScale.Crop
                 )
+                Spacer(modifier = Modifier.width(10.dp))
+
+                Column() {
+                    Text(text = "Galore Hoshe", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Text(text = "Brand: Heissy galore", fontSize = 15.sp)
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Text(text = "Price: $300", fontSize = 15.sp)
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Row() {
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                    }
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    androidx.compose.material3.Button(
+                        onClick = {},
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(blueto)
+
+
+                    ) {
+                        Text(text = "Add to Cart")
+                    }
+
+                }
 
             }
 
