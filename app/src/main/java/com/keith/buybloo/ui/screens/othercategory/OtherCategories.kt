@@ -36,12 +36,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.keith.buybloo.R
 import com.keith.buybloo.ui.theme.blueto
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun OtherCategoriesScreen(){
+fun OtherCategoriesScreen(navController: NavController){
 
     Column(
         modifier = Modifier.fillMaxSize()
@@ -193,6 +195,6 @@ fun OtherCategoriesScreen(){
 @Composable
 fun OtherCategoriesScreenPreview(){
 
-    OtherCategoriesScreen()
+    OtherCategoriesScreen(navController = rememberNavController())
 
 }

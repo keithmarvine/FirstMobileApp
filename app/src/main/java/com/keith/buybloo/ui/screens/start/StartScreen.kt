@@ -31,11 +31,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.keith.buybloo.R
+import com.keith.buybloo.navigation.ROUT_CATEGORY
 import com.keith.buybloo.ui.theme.blueto
 
 @Composable
-fun StartScreen(){
+fun StartScreen(navController: NavController){
 
     // 1. Main Layout
     //Style the elements vertically, we use column, row if we want them styled horizontally
@@ -97,7 +100,7 @@ fun StartScreen(){
 
             Image(
                 //to define the url of the image, we use painter
-                painter = painterResource(id = R.drawable.watch ),
+                painter = painterResource(id = R.drawable.watch6 ),
                 contentDescription = "Watch",
                 //To adjust the size and shape of the corners
                 modifier = Modifier.size(width = 200.dp, height = 300.dp).clip(shape = RoundedCornerShape(10.dp)),
@@ -129,7 +132,7 @@ fun StartScreen(){
         )
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button( onClick = {},
+        Button( onClick = {navController.navigate(ROUT_CATEGORY)},
             modifier = Modifier.height(50.dp).fillMaxWidth().padding(start = 20.dp, end = 20.dp),
             shape = RoundedCornerShape(10.dp),
             colors = ButtonDefaults.buttonColors(blueto)) {
@@ -149,6 +152,6 @@ fun StartScreen(){
 @Preview(showBackground = true)
 @Composable
 fun StartScreenPreview(){
-    StartScreen()
+    StartScreen(rememberNavController())
 
 }

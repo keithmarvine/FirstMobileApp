@@ -35,6 +35,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -42,12 +43,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.keith.buybloo.R
+import com.keith.buybloo.navigation.ROUT_OTHER
 import com.keith.buybloo.ui.theme.blueto
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CategoryScreen(){
+fun CategoryScreen(navController: NavController){
 
     Column(
         modifier = Modifier.fillMaxSize()
@@ -74,7 +78,7 @@ fun CategoryScreen(){
                 IconButton(onClick = {}) {
                     Icon(imageVector = Icons.Default.ShoppingCart, contentDescription = "Menu")
                 }
-                IconButton(onClick = {}) {
+                IconButton(onClick = {navController.navigate(ROUT_OTHER)}) {
                     Icon(imageVector = Icons.Default.Info, contentDescription = "Menu")
                 }
 
@@ -121,14 +125,15 @@ fun CategoryScreen(){
 
         //Scrollable column
         Column(
-            modifier = Modifier.verticalScroll(rememberScrollState())
+            modifier = Modifier
+                .verticalScroll(rememberScrollState())
         ) {
             //Row
             Row() {
                 Image(
                     painter = painterResource(id = R.drawable.watch2),
                     contentDescription = "Watch",
-                    modifier = Modifier.size(200.dp).padding(start = 10.dp),
+                    modifier = Modifier.size(200.dp).padding(start = 10.dp).clip(shape = RoundedCornerShape(10.dp)),
                     contentScale = ContentScale.Crop
                 )
                 Spacer(modifier = Modifier.width(10.dp))
@@ -141,6 +146,144 @@ fun CategoryScreen(){
                     Spacer(modifier = Modifier.height(10.dp))
 
                     Text(text = "Price: $300", fontSize = 15.sp)
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Row() {
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                    }
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    androidx.compose.material3.Button(
+                        onClick = {},
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(blueto)
+
+
+                    ) {
+                        Text(text = "Add to Cart")
+                    }
+
+                }
+
+            }
+
+            //End of row
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            //Row
+            Row() {
+                Image(
+                    painter = painterResource(id = R.drawable.watch3),
+                    contentDescription = "Watch",
+                    modifier = Modifier.size(200.dp).padding(start = 10.dp).clip(shape = RoundedCornerShape(10.dp)),
+                    contentScale = ContentScale.Crop
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+
+                Column() {
+                    Text(text = "Maritim Beau", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Text(text = "Brand: Beau Monde", fontSize = 15.sp)
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Text(text = "Price: $500", fontSize = 15.sp)
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Row() {
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                    }
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    androidx.compose.material3.Button(
+                        onClick = {},
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(blueto)
+
+
+                    ) {
+                        Text(text = "Add to Cart")
+                    }
+
+                }
+
+            }
+
+            //End of row
+            Spacer(modifier = Modifier.height(10.dp))
+
+            //Row
+            Row() {
+                Image(
+                    painter = painterResource(id = R.drawable.watch4),
+                    contentDescription = "Watch",
+                    modifier = Modifier.size(200.dp).padding(start = 10.dp).clip(shape = RoundedCornerShape(10.dp)),
+                    contentScale = ContentScale.Crop
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+
+                Column() {
+                    Text(text = "Wonder Valoe", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Text(text = "Brand: Valor Bond", fontSize = 15.sp)
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Text(text = "Price: $700", fontSize = 15.sp)
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Row() {
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                        Icon(imageVector = Icons.Default.Star, contentDescription = "Watch1", tint = blueto)
+                    }
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    androidx.compose.material3.Button(
+                        onClick = {},
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(blueto)
+
+
+                    ) {
+                        Text(text = "Add to Cart")
+                    }
+
+                }
+
+            }
+
+            //End of row
+            Spacer(modifier = Modifier.height(10.dp))
+            //Row
+            Row() {
+                Image(
+                    painter = painterResource(id = R.drawable.watch5),
+                    contentDescription = "Watch",
+                    modifier = Modifier.size(200.dp).padding(start = 10.dp).clip(shape = RoundedCornerShape(10.dp)),
+                    contentScale = ContentScale.Crop
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+
+                Column() {
+                    Text(text = "Mishman Beau", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Text(text = "Brand: Beau Monde", fontSize = 15.sp)
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Text(text = "Price: $900", fontSize = 15.sp)
                     Spacer(modifier = Modifier.height(10.dp))
 
                     Row() {
@@ -188,6 +331,6 @@ fun CategoryScreen(){
 @Composable
 fun CategoryScreenPreview(){
 
-    CategoryScreen()
+    CategoryScreen(rememberNavController())
 
 }
