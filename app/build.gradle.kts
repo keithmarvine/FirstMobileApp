@@ -61,4 +61,8 @@ dependencies {
     //Navigation
     implementation("androidx.navigation:navigation-runtime-ktx:2.9.6")
     implementation("androidx.navigation:navigation-compose:2.9.6")
+
+
+    //Lottie Dependencies
+    implementation("com.airbnb.android:lottie-compose:4.2.0")
 }

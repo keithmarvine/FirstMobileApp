@@ -1,5 +1,6 @@
 package com.keith.buybloo.ui.screens.splash
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -12,8 +13,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -27,12 +30,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.animateLottieCompositionAsState
+import com.airbnb.lottie.compose.rememberLottieComposition
 import com.keith.buybloo.R
 import com.keith.buybloo.navigation.ROUT_HOME
 import com.keith.buybloo.ui.theme.blueto
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@SuppressLint("CoroutineCreationDuringComposition")
 @Composable
 fun SplashScreen(navController: NavHostController) {
 
@@ -52,21 +60,38 @@ fun SplashScreen(navController: NavHostController) {
         verticalArrangement = Arrangement.Center
     ) {
 
-        Image(
-            painter = painterResource(id = R.drawable.watch),
-            contentDescription = "jewelry",
-            modifier = Modifier.size(width=50.dp, height= 50.dp),
-            contentScale = ContentScale.Crop
+//        Image(
+//            painter = painterResource(id = R.drawable.watch),
+//            contentDescription = "jewelry",
+//            modifier = Modifier.size(width=100.dp, height= 100.dp),
+//            contentScale = ContentScale.Crop
+//        )
+
+        CircularProgressIndicator(
+            modifier = Modifier.size(50.dp),
+            color = Color.White
         )
+
+//        //Lottie Animation
+//        val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.ringcolor))
+//        val progress by animateLottieCompositionAsState(composition)
+//
+//        LottieAnimation(composition, progress,
+//            modifier = Modifier.size(300.dp)
+//        )
+        //End
 
         Spacer(modifier = Modifier.height(40.dp))
 
-        Text(text = "WATCH OUT ",
+        Text(text = "LUXURY FOR YOU",
             color = Color.White,
             fontSize = 30.sp,
             fontWeight = FontWeight.ExtraBold
 
             )
+
+
+
     }
 
 

@@ -16,6 +16,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -29,6 +30,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.animateLottieCompositionAsState
+import com.airbnb.lottie.compose.rememberLottieComposition
 import com.keith.buybloo.R
 import com.keith.buybloo.navigation.ROUT_START
 import com.keith.buybloo.ui.theme.blueto
@@ -43,15 +48,23 @@ fun HomeScreen(navController: NavHostController) {
 
     ) {
 
-        Image(
-            painter = painterResource(id = R.drawable.watch6),
-            contentDescription = "Luxury Watch",
+//        Image(
+//            painter = painterResource(id = R.drawable.watch6),
+//            contentDescription = "Luxury Watch",
+//
+//            //To make it circular
+//            modifier = Modifier.size(300.dp).clip(shape = CircleShape),
+//            contentScale = ContentScale.Crop
+//        )
 
-            //To make it circular
-            modifier = Modifier.size(300.dp).clip(shape = CircleShape),
-            contentScale = ContentScale.Crop
+        //Lottie Animation
+        val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.crown))
+        val progress by animateLottieCompositionAsState(composition)
+
+        LottieAnimation(composition, progress,
+            modifier = Modifier.size(300.dp)
         )
-
+        //End
 
 
 

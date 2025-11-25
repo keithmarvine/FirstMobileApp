@@ -10,6 +10,7 @@ import com.keith.buybloo.ui.screens.about.AboutScreen
 import com.keith.buybloo.ui.screens.category.CategoryScreen
 import com.keith.buybloo.ui.screens.home.HomeScreen
 import com.keith.buybloo.ui.screens.othercategory.OtherCategoriesScreen
+import com.keith.buybloo.ui.screens.scaffold.ScaffoldScreen
 import com.keith.buybloo.ui.screens.services.ServiceScreen
 import com.keith.buybloo.ui.screens.splash.SplashScreen
 import com.keith.buybloo.ui.screens.start.StartScreen
@@ -47,6 +48,9 @@ fun AppNavHost(
         }
         composable(ROUT_SPLASH) {
             SplashScreen(navController)
+        }
+        composable(ROUT_SCAFFOLD) {
+            ScaffoldScreen(navController)
         }
 
 
