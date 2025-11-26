@@ -8,6 +8,7 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.ShoppingCart
@@ -31,7 +32,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.keith.buybloo.navigation.ROUT_CATEGORY
 import com.keith.buybloo.navigation.ROUT_HOME
+import com.keith.buybloo.navigation.ROUT_OTHER
 import com.keith.buybloo.navigation.ROUT_START
 import com.keith.buybloo.ui.theme.blueto
 
@@ -41,14 +44,14 @@ fun ScaffoldScreen(navController: NavHostController) {
 
     //Scaffold
 
-    var selectedIndex by remember { mutableStateOf(1) }
+    var selectedIndex by remember { mutableStateOf(0) }
 
     Scaffold(
 
         //TopBar
         topBar = {
             TopAppBar(
-                title = { Text("Item Screen") },
+                title = { Text("Take your pick") },
                 navigationIcon = {
                     IconButton(onClick = { /* Handle back/nav */ }) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Back")
@@ -76,11 +79,19 @@ fun ScaffoldScreen(navController: NavHostController) {
                 containerColor = blueto
             ){
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.Person, contentDescription = "Home") },
+                    icon = { Icon(Icons.Default.Person, contentDescription = "Home", tint = Color.White) },
                     label = { Text("Login") },
                     selected = selectedIndex == 0,
                     onClick = {
                         selectedIndex = 0
+                        navController.navigate(ROUT_HOME)
+                    }
+                )
+                NavigationBarItem(
+                    icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
+                    label = { Text("Home") },
+                    selected = selectedIndex == 2,
+                    onClick = { selectedIndex = 2
                         navController.navigate(ROUT_HOME)
                     }
                 )
@@ -93,6 +104,15 @@ fun ScaffoldScreen(navController: NavHostController) {
                     }
                 )
 
+                NavigationBarItem(
+                    icon = { Icon(Icons.Default.Info, contentDescription = "Products") },
+                    label = { Text("Products") },
+                    selected = selectedIndex == 3,
+                    onClick = { selectedIndex = 3
+                        navController.navigate(ROUT_CATEGORY)
+                    }
+                )
+
 
 
             }
@@ -101,7 +121,7 @@ fun ScaffoldScreen(navController: NavHostController) {
         //FloatingActionButton
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* Add action */ },
+                onClick = { navController.navigate(ROUT_OTHER)},
                 containerColor = blueto
             ) {
                 Icon(Icons.Default.Add, contentDescription = "Add")

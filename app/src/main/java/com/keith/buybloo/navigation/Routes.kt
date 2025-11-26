@@ -9,5 +9,6 @@ const val ROUT_OTHER = "otherCategory"
 
 const val ROUT_SPLASH = "splash"
 const val ROUT_SCAFFOLD= "scaffold"
+const val ROUT_INTENT= "intent"
 
 

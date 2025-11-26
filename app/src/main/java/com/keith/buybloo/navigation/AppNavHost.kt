@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.keith.buybloo.ui.screens.about.AboutScreen
 import com.keith.buybloo.ui.screens.category.CategoryScreen
 import com.keith.buybloo.ui.screens.home.HomeScreen
+import com.keith.buybloo.ui.screens.intent.IntentScreen
 import com.keith.buybloo.ui.screens.othercategory.OtherCategoriesScreen
 import com.keith.buybloo.ui.screens.scaffold.ScaffoldScreen
 import com.keith.buybloo.ui.screens.services.ServiceScreen
@@ -52,6 +53,10 @@ fun AppNavHost(
         composable(ROUT_SCAFFOLD) {
             ScaffoldScreen(navController)
         }
+        composable(ROUT_INTENT) {
+            IntentScreen(navController)
+        }
+
 
 
     }
