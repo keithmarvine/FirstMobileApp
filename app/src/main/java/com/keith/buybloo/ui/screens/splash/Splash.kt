@@ -36,6 +36,7 @@ import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.keith.buybloo.R
 import com.keith.buybloo.navigation.ROUT_HOME
+import com.keith.buybloo.navigation.ROUT_REGISTER
 import com.keith.buybloo.ui.theme.blueto
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -50,7 +51,7 @@ fun SplashScreen(navController: NavHostController) {
     coroutineScope.launch {
 
         delay(2000)
-        navController.navigate(ROUT_HOME)
+        navController.navigate(ROUT_REGISTER)
 
     }
 

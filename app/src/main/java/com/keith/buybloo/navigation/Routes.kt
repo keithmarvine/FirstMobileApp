@@ -10,5 +10,8 @@ const val ROUT_OTHER = "otherCategory"
 const val ROUT_SPLASH = "splash"
 const val ROUT_SCAFFOLD= "scaffold"
 const val ROUT_INTENT= "intent"
+const val ROUT_REGISTER= "register"
+const val ROUT_LOGIN= "login"
+const val ROUT_DASHBOARD= "dashboard"
 
 

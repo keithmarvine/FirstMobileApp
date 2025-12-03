@@ -7,7 +7,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.keith.buybloo.ui.screens.about.AboutScreen
+import com.keith.buybloo.ui.screens.auth.LoginScreen
+import com.keith.buybloo.ui.screens.auth.RegisterScreen
 import com.keith.buybloo.ui.screens.category.CategoryScreen
+import com.keith.buybloo.ui.screens.dashboard.DashboardScreen
 import com.keith.buybloo.ui.screens.home.HomeScreen
 import com.keith.buybloo.ui.screens.intent.IntentScreen
 import com.keith.buybloo.ui.screens.othercategory.OtherCategoriesScreen
@@ -55,6 +58,15 @@ fun AppNavHost(
         }
         composable(ROUT_INTENT) {
             IntentScreen(navController)
+        }
+        composable(ROUT_REGISTER) {
+            RegisterScreen(navController)
+        }
+        composable(ROUT_LOGIN) {
+            LoginScreen(navController)
+        }
+        composable(ROUT_DASHBOARD) {
+            DashboardScreen(navController)
         }
 
 

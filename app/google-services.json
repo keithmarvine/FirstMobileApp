@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "421822558126",
+    "project_id": "buybloo-95ed8",
+    "storage_bucket": "buybloo-95ed8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:421822558126:android:bc7d1ee4891f918948a23f",
+        "android_client_info": {
+          "package_name": "com.keith.buybloo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiiuDXbzg12oxQFlKcf3UEuVqq2_AhXuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
